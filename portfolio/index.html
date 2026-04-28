@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Primicerio — Data Analyst Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- EXTRA 1: Dark/Light Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9790;</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">AP<span class="accent-dot">.</span></a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Alan Primicerio</h1>
+            <!-- EXTRA 2: Typing Animation -->
+            <p class="hero-title">
+                <span id="typed-text"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-description">
+                Turning raw data into actionable insights through analysis, visualization, and storytelling.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I am a data analyst with a passion for uncovering patterns and insights that drive
+                        better business decisions. My journey into data analytics combines a strong foundation
+                        in commercial operations with growing expertise in Python, SQL, and data visualization tools.
+                    </p>
+                    <p>
+                        Based in Turin, Italy, I currently work in commercial analytics where I build dashboards,
+                        track sales performance, and help teams make data-driven decisions. I am always looking
+                        for new challenges and opportunities to grow as an analyst.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="4">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Tools Mastered</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <span>AP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <!-- EXTRA 3: Animated Skill Bars on Scroll -->
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming &amp; Databases</h3>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>Python</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>SQL</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>R</span><span>60%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>HTML / CSS / JS</span><span>75%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization &amp; Tools</h3>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>Tableau</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>Google Sheets / Excel</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>Jupyter Notebook</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span>Git / GitHub</span><span>70%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <!-- EXTRA 4: Project Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="sql">SQL</button>
+                <button class="filter-btn" data-filter="tableau">Tableau</button>
+                <button class="filter-btn" data-filter="spreadsheet">Spreadsheet</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card" data-category="python">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#128202;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sales EDA with Python</h3>
+                        <p>Exploratory data analysis on retail sales data using pandas, matplotlib, and seaborn to identify seasonal trends.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tableau">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#128200;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Commercial Dashboard</h3>
+                        <p>Interactive Tableau dashboard tracking agent performance, sell-out metrics, and stock-to-sales ratios across regions.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">KPI</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="sql">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#128451;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Customer Segmentation SQL</h3>
+                        <p>SQL-based analysis to segment customers by purchase behavior, frequency, and lifetime value for targeted marketing.</p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">BigQuery</span>
+                            <span class="tag">Segmentation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="spreadsheet">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#128196;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Stock &amp; Reorder Tracker</h3>
+                        <p>Google Sheets tool with IMPORTRANGE, dynamic arrays, and automated reorder alerts for inventory management.</p>
+                        <div class="project-tags">
+                            <span class="tag">Google Sheets</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#129302;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Churn Prediction Model</h3>
+                        <p>Machine learning model using scikit-learn to predict customer churn with 87% accuracy on telecom data.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tableau">
+                    <div class="project-image">
+                        <div class="project-placeholder">&#127758;</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Geographic Sales Map</h3>
+                        <p>Tableau geographic visualization showing revenue distribution across Italian regions with drill-down capability.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Geospatial</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">&#127891;</div>
+                    <h3>Google Data Analytics</h3>
+                    <p>Professional Certificate — Coursera</p>
+                    <span class="cert-date">2026</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#128187;</div>
+                    <h3>HTML, CSS &amp; JavaScript</h3>
+                    <p>Johns Hopkins University — Coursera</p>
+                    <span class="cert-date">2026</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#128202;</div>
+                    <h3>Tableau Data Visualization</h3>
+                    <p>Google / Coursera</p>
+                    <span class="cert-date">2026</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">&#128013;</div>
+                    <h3>Python for Data Science</h3>
+                    <p>Google / Coursera</p>
+                    <span class="cert-date">2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>I am always open to discussing data analytics projects, job opportunities, or just connecting with fellow data enthusiasts.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">&#128205;</span>
+                            <span>Turin, Italy</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">&#9993;</span>
+                            <span>alan.primicerio@email.com</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Data-Zombie" class="social-link" aria-label="GitHub">GitHub</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" class="social-link" aria-label="Kaggle">Kaggle</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Alan Primicerio. Built with HTML, CSS &amp; JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
