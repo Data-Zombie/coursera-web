@@ -1,0 +1,96 @@
+/* Custom styles for Bootstrap Template Portfolio */
+:root {
+    --accent: #2b6777;
+    --accent-hover: #1d4e5c;
+    --accent-light: #e8f4f7;
+}
+
+body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    color: #2d3436;
+}
+
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+
+.text-accent { color: var(--accent) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-accent-light { background-color: var(--accent-light) !important; }
+
+.btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+}
+
+.progress-bar.bg-accent { background-color: var(--accent) !important; }
+
+/* Section headings */
+.section-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 14px;
+}
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255,255,255,0.92) !important;
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.3s;
+}
+.navbar-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08) !important; }
+.navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+.nav-link { font-weight: 500; font-size: 0.9rem; letter-spacing: 0.01em; }
+
+/* Hero */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f7 100%);
+}
+.hero-heading { font-family: 'Playfair Display', serif; }
+.hero-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 3px dashed var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--accent);
+}
+
+/* Project cards */
+.project-card { transition: transform 0.3s, box-shadow 0.3s; border-radius: 12px; overflow: hidden; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important; }
+.project-thumb { height: 160px; background: #f0f4f5; }
+.card-title { font-family: 'Playfair Display', serif; }
+
+/* Stat boxes */
+.stat-box { transition: transform 0.3s; }
+.stat-box:hover { transform: translateY(-3px); }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+/* Form focus */
+.form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 0.2rem rgba(43,103,119,0.15); }

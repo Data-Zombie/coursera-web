@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Primicerio — Portfolio (React Framework)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/react-styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /* ===== DATA ===== */
+        const projects = [
+            { id:1, title:"Sales EDA with Python", desc:"Exploratory analysis on retail sales using pandas and seaborn.", cat:"python", icon:"\u{1F4CA}", tags:["Python","Pandas"] },
+            { id:2, title:"Commercial Dashboard", desc:"Tableau dashboard tracking agent performance and sell-out metrics.", cat:"tableau", icon:"\u{1F4C8}", tags:["Tableau","KPI"] },
+            { id:3, title:"Customer Segmentation", desc:"SQL analysis to segment customers by behavior and lifetime value.", cat:"sql", icon:"\u{1F5C3}", tags:["SQL","BigQuery"] },
+            { id:4, title:"Stock & Reorder Tracker", desc:"Google Sheets with IMPORTRANGE and dynamic arrays for inventory.", cat:"spreadsheet", icon:"\u{1F4C4}", tags:["Sheets","Automation"] },
+            { id:5, title:"Churn Prediction", desc:"ML model using scikit-learn to predict churn with 87% accuracy.", cat:"python", icon:"\u{1F916}", tags:["Python","ML"] },
+            { id:6, title:"Geographic Sales Map", desc:"Tableau geographic viz of revenue across Italian regions.", cat:"tableau", icon:"\u{1F30E}", tags:["Tableau","Geospatial"] },
+        ];
+
+        const skills = [
+            { name:"Python", pct:85 }, { name:"SQL", pct:90 }, { name:"Tableau", pct:80 },
+            { name:"Google Sheets / Excel", pct:95 }, { name:"R", pct:60 },
+            { name:"HTML / CSS / JS", pct:75 }, { name:"Jupyter Notebook", pct:80 }, { name:"Git / GitHub", pct:70 },
+        ];
+
+        const certs = [
+            { title:"Google Data Analytics", org:"Coursera", icon:"\u{1F393}" },
+            { title:"HTML, CSS & JS", org:"Johns Hopkins", icon:"\u{1F4BB}" },
+            { title:"Tableau Visualization", org:"Google", icon:"\u{1F4CA}" },
+            { title:"Python for Data Science", org:"Google", icon:"\u{1F40D}" },
+        ];
+
+        /* ===== COMPONENTS ===== */
+
+        function Navbar() {
+            const [scrolled, setScrolled] = useState(false);
+            const [menuOpen, setMenuOpen] = useState(false);
+
+            useEffect(() => {
+                const onScroll = () => setScrolled(window.scrollY > 50);
+                window.addEventListener('scroll', onScroll);
+                return () => window.removeEventListener('scroll', onScroll);
+            }, []);
+
+            const links = ["About","Skills","Projects","Certs","Contact"];
+            return (
+                <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+                    <div className="nav-container">
+                        <a href="#hero" className="nav-logo">AP<span className="dot">.</span></a>
+                        <button className={`hamburger ${menuOpen?'open':''}`} onClick={()=>setMenuOpen(!menuOpen)}>
+                            <span></span><span></span><span></span>
+                        </button>
+                        <ul className={`nav-links ${menuOpen?'nav-open':''}`}>
+                            {links.map(l=>(
+                                <li key={l}><a href={`#${l.toLowerCase()}`} onClick={()=>setMenuOpen(false)}>{l}</a></li>
+                            ))}
+                        </ul>
+                    </div>
+                </nav>
+            );
+        }
+
+        function Hero() {
+            const [text, setText] = useState('');
+            const [phraseIdx, setPhraseIdx] = useState(0);
+            const [charIdx, setCharIdx] = useState(0);
+            const [deleting, setDeleting] = useState(false);
+            const phrases = ["Data Analyst","Python Enthusiast","SQL Developer","Dashboard Builder"];
+
+            useEffect(() => {
+                const current = phrases[phraseIdx];
+                const speed = deleting ? 40 : 80;
+                const timer = setTimeout(() => {
+                    if (!deleting) {
+                        setText(current.substring(0, charIdx + 1));
+                        if (charIdx + 1 === current.length) {
+                            setTimeout(() => setDeleting(true), 1800);
+                            return;
+                        }
+                        setCharIdx(charIdx + 1);
+                    } else {
+                        setText(current.substring(0, charIdx - 1));
+                        if (charIdx - 1 === 0) {
+                            setDeleting(false);
+                            setPhraseIdx((phraseIdx + 1) % phrases.length);
+                            setCharIdx(0);
+                            return;
+                        }
+                        setCharIdx(charIdx - 1);
+                    }
+                }, speed);
+                return () => clearTimeout(timer);
+            }, [charIdx, deleting, phraseIdx]);
+
+            return (
+                <header className="hero" id="hero">
+                    <div className="hero-content">
+                        <p className="hero-greeting">Hello, I'm</p>
+                        <h1 className="hero-name">Alan Primicerio</h1>
+                        <p className="hero-role">{text}<span className="cursor">|</span></p>
+                        <p className="hero-desc">Turning raw data into actionable insights through analysis, visualization, and storytelling.</p>
+                        <div className="hero-btns">
+                            <a href="#projects" className="btn btn-fill">View Projects</a>
+                            <a href="#contact" className="btn btn-ghost">Contact Me</a>
+                        </div>
+                    </div>
+                </header>
+            );
+        }
+
+        function About() {
+            return (
+                <section className="section" id="about">
+                    <div className="container">
+                        <h2 className="section-title">About Me</h2>
+                        <div className="about-content">
+                            <p>I am a data analyst based in Turin, Italy, with a passion for uncovering patterns that drive better business decisions. My background in commercial operations gives me a unique perspective on data.</p>
+                            <p>I work with Python, SQL, Tableau, and spreadsheets daily to build dashboards, track KPIs, and support data-driven decisions across teams.</p>
+                            <div className="about-stats">
+                                <StatCounter num={5} label="Certifications"/>
+                                <StatCounter num={10} label="Projects"/>
+                                <StatCounter num={4} label="Tools Mastered"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function StatCounter({num, label}) {
+            const [count, setCount] = useState(0);
+            const ref = useRef(null);
+            const animated = useRef(false);
+
+            useEffect(() => {
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting && !animated.current) {
+                        animated.current = true;
+                        let c = 0;
+                        const interval = setInterval(() => {
+                            c++;
+                            setCount(c);
+                            if (c >= num) clearInterval(interval);
+                        }, 100);
+                    }
+                }, {threshold: 0.5});
+                if (ref.current) observer.observe(ref.current);
+                return () => observer.disconnect();
+            }, [num]);
+
+            return (
+                <div className="stat" ref={ref}>
+                    <span className="stat-num">{count}+</span>
+                    <span className="stat-label">{label}</span>
+                </div>
+            );
+        }
+
+        function SkillBar({name, pct}) {
+            const [width, setWidth] = useState(0);
+            const ref = useRef(null);
+            const animated = useRef(false);
+
+            useEffect(() => {
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting && !animated.current) {
+                        animated.current = true;
+                        setTimeout(() => setWidth(pct), 100);
+                    }
+                }, {threshold: 0.3});
+                if (ref.current) observer.observe(ref.current);
+                return () => observer.disconnect();
+            }, [pct]);
+
+            return (
+                <div className="skill-item" ref={ref}>
+                    <div className="skill-header">
+                        <span>{name}</span><span>{pct}%</span>
+                    </div>
+                    <div className="skill-track">
+                        <div className="skill-fill" style={{width: width+'%'}}></div>
+                    </div>
+                </div>
+            );
+        }
+
+        function Skills() {
+            return (
+                <section className="section section--alt" id="skills">
+                    <div className="container">
+                        <h2 className="section-title">Skills</h2>
+                        <div className="skills-grid">
+                            {skills.map(s => <SkillBar key={s.name} name={s.name} pct={s.pct}/>)}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function ProjectCard({project}) {
+            return (
+                <div className="project-card">
+                    <div className="project-thumb"><span>{project.icon}</span></div>
+                    <div className="project-body">
+                        <h3>{project.title}</h3>
+                        <p>{project.desc}</p>
+                        <div className="tags">
+                            {project.tags.map(t => <span className="tag" key={t}>{t}</span>)}
+                        </div>
+                        <a href="#" className="project-link">View Project &#8594;</a>
+                    </div>
+                </div>
+            );
+        }
+
+        function Projects() {
+            const [filter, setFilter] = useState('all');
+            const categories = ['all','python','sql','tableau','spreadsheet'];
+            const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter);
+
+            return (
+                <section className="section" id="projects">
+                    <div className="container">
+                        <h2 className="section-title">Projects</h2>
+                        <div className="filter-bar">
+                            {categories.map(c => (
+                                <button key={c} className={`filter-btn ${filter===c?'active':''}`}
+                                    onClick={() => setFilter(c)}>
+                                    {c.charAt(0).toUpperCase()+c.slice(1)}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="projects-grid">
+                            {filtered.map(p => <ProjectCard key={p.id} project={p}/>)}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function Certifications() {
+            return (
+                <section className="section section--alt" id="certs">
+                    <div className="container">
+                        <h2 className="section-title">Certifications</h2>
+                        <div className="cert-grid">
+                            {certs.map(c => (
+                                <div className="cert-card" key={c.title}>
+                                    <div className="cert-icon">{c.icon}</div>
+                                    <h3>{c.title}</h3>
+                                    <p>{c.org} — 2026</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function Contact() {
+            const [sent, setSent] = useState(false);
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                setSent(true);
+                setTimeout(() => setSent(false), 2500);
+                e.target.reset();
+            };
+            return (
+                <section className="section" id="contact">
+                    <div className="container">
+                        <h2 className="section-title">Get in Touch</h2>
+                        <div className="contact-grid">
+                            <div className="contact-info">
+                                <p>Open to discussing data analytics projects, job opportunities, or connecting with fellow data enthusiasts.</p>
+                                <p>&#128205; Turin, Italy</p>
+                                <p>&#9993; alan.primicerio@email.com</p>
+                                <div className="social-row">
+                                    <a href="https://github.com/Data-Zombie" className="social-btn">GitHub</a>
+                                    <a href="#" className="social-btn">LinkedIn</a>
+                                    <a href="#" className="social-btn">Kaggle</a>
+                                </div>
+                            </div>
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                <input type="text" placeholder="Your name" required/>
+                                <input type="email" placeholder="your@email.com" required/>
+                                <textarea rows="4" placeholder="Your message..." required></textarea>
+                                <button type="submit" className={`btn btn-fill ${sent?'btn-sent':''}`}>
+                                    {sent ? 'Sent!' : 'Send Message'}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function Footer() {
+            return (
+                <footer className="footer">
+                    <p>&copy; 2026 Alan Primicerio. Built with React.js</p>
+                </footer>
+            );
+        }
+
+        function App() {
+            return (
+                <>
+                    <Navbar/>
+                    <Hero/>
+                    <About/>
+                    <Skills/>
+                    <Projects/>
+                    <Certifications/>
+                    <Contact/>
+                    <Footer/>
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App/>);
+    </script>
+</body>
+</html>

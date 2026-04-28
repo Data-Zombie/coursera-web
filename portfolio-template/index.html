@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Primicerio — Portfolio (Bootstrap Template)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+    <!-- Navbar (Bootstrap Component) -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#page-top">AP<span class="text-accent">.</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero (Bootstrap Jumbotron-style) -->
+    <header class="hero-section d-flex align-items-center" id="page-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="text-accent fw-500 mb-1">Hello, I'm</p>
+                    <h1 class="display-3 fw-bold hero-heading">Alan Primicerio</h1>
+                    <h2 class="h4 text-muted mb-3">Data Analyst &amp; Dashboard Builder</h2>
+                    <p class="lead text-secondary mb-4">Turning raw data into clear insights through analysis, visualization, and storytelling.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#projects" class="btn btn-accent btn-lg px-4">View Projects</a>
+                        <a href="#contact" class="btn btn-outline-secondary btn-lg px-4">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                    <div class="hero-avatar">AP</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About (Bootstrap Grid) -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container py-4">
+            <h2 class="section-heading text-center mb-5">About Me</h2>
+            <div class="row g-4">
+                <div class="col-md-8">
+                    <p class="text-secondary">I am a data analyst based in Turin, Italy, with a passion for uncovering patterns that drive better business decisions. My background in commercial operations gives me a unique perspective on turning numbers into actionable strategies.</p>
+                    <p class="text-secondary">I work with Python, SQL, Tableau, and spreadsheets daily to build dashboards, track KPIs, and support data-driven decision making across teams.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="row text-center g-3">
+                        <div class="col-4 col-md-12">
+                            <div class="stat-box p-3 bg-white rounded-3 shadow-sm">
+                                <span class="display-6 fw-bold text-accent">5+</span>
+                                <small class="d-block text-muted">Certifications</small>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <div class="stat-box p-3 bg-white rounded-3 shadow-sm">
+                                <span class="display-6 fw-bold text-accent">10+</span>
+                                <small class="d-block text-muted">Projects</small>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-12">
+                            <div class="stat-box p-3 bg-white rounded-3 shadow-sm">
+                                <span class="display-6 fw-bold text-accent">4+</span>
+                                <small class="d-block text-muted">Tools</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills (Bootstrap Progress Bars) -->
+    <section class="py-5" id="skills">
+        <div class="container py-4">
+            <h2 class="section-heading text-center mb-5">Skills</h2>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-600 mb-4">Programming &amp; Databases</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">Python</small><small>85%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">SQL</small><small>90%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">R</small><small>60%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">HTML / CSS / JS</small><small>75%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-600 mb-4">Visualization &amp; Tools</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">Tableau</small><small>80%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">Google Sheets / Excel</small><small>95%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">Jupyter Notebook</small><small>80%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1"><small class="fw-500">Git / GitHub</small><small>70%</small></div>
+                        <div class="progress" style="height:10px"><div class="progress-bar bg-accent" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects (Bootstrap Cards) -->
+    <section class="py-5 bg-light" id="projects">
+        <div class="container py-4">
+            <h2 class="section-heading text-center mb-5">Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#128202;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Sales EDA with Python</h5>
+                            <p class="card-text text-muted small">Exploratory data analysis on retail sales using pandas, matplotlib, and seaborn to identify seasonal trends.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">Python</span>
+                                <span class="badge bg-accent-light text-accent">Pandas</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#128200;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Commercial Dashboard</h5>
+                            <p class="card-text text-muted small">Interactive Tableau dashboard tracking agent performance and sell-out metrics across regions.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">Tableau</span>
+                                <span class="badge bg-accent-light text-accent">KPI</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#128451;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Customer Segmentation</h5>
+                            <p class="card-text text-muted small">SQL-based analysis to segment customers by purchase behavior and lifetime value for targeted marketing.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">SQL</span>
+                                <span class="badge bg-accent-light text-accent">BigQuery</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#128196;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Stock &amp; Reorder Tracker</h5>
+                            <p class="card-text text-muted small">Google Sheets tool with IMPORTRANGE and dynamic arrays for automated inventory reorder alerts.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">Sheets</span>
+                                <span class="badge bg-accent-light text-accent">Automation</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#129302;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Churn Prediction</h5>
+                            <p class="card-text text-muted small">Machine learning model using scikit-learn to predict customer churn with 87% accuracy.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">Python</span>
+                                <span class="badge bg-accent-light text-accent">ML</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        <div class="card-img-top project-thumb d-flex align-items-center justify-content-center">
+                            <span class="display-4">&#127758;</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Geographic Sales Map</h5>
+                            <p class="card-text text-muted small">Tableau geographic visualization of revenue distribution across Italian regions with drill-down.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-accent-light text-accent">Tableau</span>
+                                <span class="badge bg-accent-light text-accent">Geospatial</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                            <a href="#" class="text-accent fw-500 small">View Project <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications (Bootstrap Cards) -->
+    <section class="py-5" id="certs">
+        <div class="container py-4">
+            <h2 class="section-heading text-center mb-5">Certifications</h2>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-center border-0 shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <div class="display-5 mb-2">&#127891;</div>
+                            <h6 class="fw-bold">Google Data Analytics</h6>
+                            <small class="text-muted">Coursera — 2026</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-center border-0 shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <div class="display-5 mb-2">&#128187;</div>
+                            <h6 class="fw-bold">HTML, CSS &amp; JS</h6>
+                            <small class="text-muted">Johns Hopkins — 2026</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-center border-0 shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <div class="display-5 mb-2">&#128202;</div>
+                            <h6 class="fw-bold">Tableau Visualization</h6>
+                            <small class="text-muted">Google — 2026</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-center border-0 shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <div class="display-5 mb-2">&#128013;</div>
+                            <h6 class="fw-bold">Python for Data Science</h6>
+                            <small class="text-muted">Google — 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact (Bootstrap Form) -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container py-4">
+            <h2 class="section-heading text-center mb-5">Get in Touch</h2>
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <p class="text-secondary mb-4">Open to discussing data analytics projects, job opportunities, or connecting with fellow data enthusiasts.</p>
+                    <p class="text-secondary"><i class="bi bi-geo-alt-fill text-accent me-2"></i>Turin, Italy</p>
+                    <p class="text-secondary"><i class="bi bi-envelope-fill text-accent me-2"></i>alan.primicerio@email.com</p>
+                    <div class="d-flex gap-2 mt-4">
+                        <a href="https://github.com/Data-Zombie" class="btn btn-sm btn-outline-secondary"><i class="bi bi-github me-1"></i>GitHub</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-bar-chart-fill me-1"></i>Kaggle</a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="formName" class="form-label small fw-500">Name</label>
+                                <input type="text" class="form-control" id="formName" required placeholder="Your name">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="formEmail" class="form-label small fw-500">Email</label>
+                                <input type="email" class="form-control" id="formEmail" required placeholder="your@email.com">
+                            </div>
+                            <div class="col-12">
+                                <label for="formMsg" class="form-label small fw-500">Message</label>
+                                <textarea class="form-control" id="formMsg" rows="4" required placeholder="Your message..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-accent w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center border-top bg-white">
+        <div class="container">
+            <small class="text-muted">&copy; 2026 Alan Primicerio. Built with Bootstrap 5.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(function(a){
+            a.addEventListener('click',function(e){
+                var t=document.querySelector(this.getAttribute('href'));
+                if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+                var c=document.getElementById('navContent');
+                if(c.classList.contains('show')){bootstrap.Collapse.getInstance(c).hide();}
+            });
+        });
+        // Navbar background on scroll
+        window.addEventListener('scroll',function(){
+            var n=document.getElementById('mainNav');
+            n.classList.toggle('navbar-scrolled',window.scrollY>50);
+        });
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            var b=this.querySelector('button');
+            b.textContent='Sent!';b.classList.replace('btn-accent','btn-success');
+            setTimeout(function(){b.textContent='Send Message';b.classList.replace('btn-success','btn-accent');},2000);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
