@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Styles — UX Designer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Alex<span class="logo-dot">.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="container">
+            <p class="hero-label">UX Designer &amp; Creative Thinker</p>
+            <h1>Hi, I'm Alex Styles</h1>
+            <p class="hero-sub">I design intuitive digital experiences that put people first. Currently crafting products that are both beautiful and functional.</p>
+            <div class="hero-cta">
+                <a href="#work" class="btn btn-primary">See My Work</a>
+                <a href="#contact" class="btn btn-outline">Say Hello</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-layout">
+                <div class="about-text">
+                    <p>I'm a UX designer with 5+ years of experience creating user-centered digital products. I specialize in turning complex problems into simple, elegant solutions.</p>
+                    <p>My approach combines research-driven insights with clean visual design. I believe great design is invisible — it just works.</p>
+                    <p>When I'm not designing, you'll find me sketching in coffee shops, exploring new cities, or tinkering with CSS animations.</p>
+                </div>
+                <div class="about-avatar">
+                    <div class="avatar-box">AS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills with Tooltips -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-grid">
+                <!-- INTERACTIVE: Tooltip on hover -->
+                <div class="skill-tile" data-tooltip="Wireframing, prototyping, and user flows">
+                    <div class="skill-icon">&#9997;</div>
+                    <h3>UX Design</h3>
+                </div>
+                <div class="skill-tile" data-tooltip="Clean layouts, typography, and color systems">
+                    <div class="skill-icon">&#127912;</div>
+                    <h3>Visual Design</h3>
+                </div>
+                <div class="skill-tile" data-tooltip="Surveys, interviews, and usability testing">
+                    <div class="skill-icon">&#128269;</div>
+                    <h3>User Research</h3>
+                </div>
+                <div class="skill-tile" data-tooltip="Interactive prototypes and micro-interactions">
+                    <div class="skill-icon">&#9881;</div>
+                    <h3>Prototyping</h3>
+                </div>
+                <div class="skill-tile" data-tooltip="Semantic HTML, modern CSS, and accessibility">
+                    <div class="skill-icon">&#128187;</div>
+                    <h3>HTML &amp; CSS</h3>
+                </div>
+                <div class="skill-tile" data-tooltip="Figma, Sketch, Adobe XD, and InVision">
+                    <div class="skill-icon">&#128736;</div>
+                    <h3>Design Tools</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Projects with Modal -->
+    <section class="section" id="work">
+        <div class="container">
+            <h2 class="section-heading">Selected Work</h2>
+            <div class="work-grid">
+                <!-- INTERACTIVE: Click opens modal -->
+                <div class="work-card" onclick="openModal('modal1')">
+                    <div class="work-thumb thumb-1"><span>&#128241;</span></div>
+                    <div class="work-info">
+                        <h3>FinTrack App Redesign</h3>
+                        <p>Mobile banking UX overhaul</p>
+                    </div>
+                    <div class="work-overlay">Click to view details</div>
+                </div>
+
+                <div class="work-card" onclick="openModal('modal2')">
+                    <div class="work-thumb thumb-2"><span>&#128218;</span></div>
+                    <div class="work-info">
+                        <h3>EduFlow Platform</h3>
+                        <p>E-learning dashboard design</p>
+                    </div>
+                    <div class="work-overlay">Click to view details</div>
+                </div>
+
+                <div class="work-card" onclick="openModal('modal3')">
+                    <div class="work-thumb thumb-3"><span>&#127968;</span></div>
+                    <div class="work-info">
+                        <h3>HomeNest Landing Page</h3>
+                        <p>Real estate responsive site</p>
+                    </div>
+                    <div class="work-overlay">Click to view details</div>
+                </div>
+
+                <div class="work-card" onclick="openModal('modal4')">
+                    <div class="work-thumb thumb-4"><span>&#9749;</span></div>
+                    <div class="work-info">
+                        <h3>BeanScene Branding</h3>
+                        <p>Coffee shop identity system</p>
+                    </div>
+                    <div class="work-overlay">Click to view details</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="modal1">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+            <h2>FinTrack App Redesign</h2>
+            <p class="modal-subtitle">Mobile Banking UX — 2025</p>
+            <p>Redesigned the core banking experience for 200K+ users. Simplified the transaction flow from 7 steps to 3, resulting in a 40% increase in task completion rates.</p>
+            <p><strong>Tools:</strong> Figma, Maze, Hotjar</p>
+            <p><strong>Role:</strong> Lead UX Designer</p>
+        </div>
+    </div>
+    <div class="modal-backdrop" id="modal2">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+            <h2>EduFlow Platform</h2>
+            <p class="modal-subtitle">E-Learning Dashboard — 2025</p>
+            <p>Designed an intuitive dashboard for online learners to track progress, manage courses, and access resources. Focused on accessibility and responsive layout.</p>
+            <p><strong>Tools:</strong> Sketch, InVision, Miro</p>
+            <p><strong>Role:</strong> UX/UI Designer</p>
+        </div>
+    </div>
+    <div class="modal-backdrop" id="modal3">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+            <h2>HomeNest Landing Page</h2>
+            <p class="modal-subtitle">Real Estate Website — 2024</p>
+            <p>Created a responsive landing page for a real estate startup. The design focused on clean visuals, fast load times, and a seamless search experience across devices.</p>
+            <p><strong>Tools:</strong> Figma, HTML/CSS, JavaScript</p>
+            <p><strong>Role:</strong> Designer &amp; Front-end Developer</p>
+        </div>
+    </div>
+    <div class="modal-backdrop" id="modal4">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+            <h2>BeanScene Branding</h2>
+            <p class="modal-subtitle">Brand Identity — 2024</p>
+            <p>Developed a complete brand identity for an artisan coffee shop, including logo, color palette, typography system, and packaging design.</p>
+            <p><strong>Tools:</strong> Adobe Illustrator, Photoshop</p>
+            <p><strong>Role:</strong> Brand Designer</p>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <h2 class="section-heading">Get in Touch</h2>
+            <div class="contact-layout">
+                <div class="contact-text">
+                    <p>Have a project in mind or just want to chat about design? I'd love to hear from you.</p>
+                    <div class="contact-links">
+                        <a href="mailto:alex@alexstyles.com">alex@alexstyles.com</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Dribbble</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="you@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Alex Styles. Designed with care.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* Mobile Menu Toggle */
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+            this.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('open');
+                document.getElementById('menuToggle').classList.remove('active');
+            });
+        });
+
+        /* Navbar scroll effect */
+        window.addEventListener('scroll', function() {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        /* Modal open/close */
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.modal-backdrop').forEach(function(b) {
+            b.addEventListener('click', function(e) {
+                if (e.target === b) { b.classList.remove('active'); document.body.style.overflow = ''; }
+            });
+        });
+
+        /* Contact form */
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = this.querySelector('button');
+            btn.textContent = 'Sent!';
+            btn.style.background = '#059669';
+            var self = this;
+            setTimeout(function() { btn.textContent = 'Send Message'; btn.style.background = ''; self.reset(); }, 2500);
+        });
+
+        /* Smooth scroll */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var t = document.querySelector(this.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    </script>
+</body>
+</html>
